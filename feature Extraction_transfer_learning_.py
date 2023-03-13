@@ -86,6 +86,9 @@ model.compile(optimizer="adam",loss="binary_crossentropy",metrics=["acc"])
 
 save_model = model.fit_generator(train_set,
 epochs=10,validation_data=test_set)
+save_model.model.save(r"E:\CNN Project\TL\save model\TL_feature_extraction_10.h5")
+
+
 
 
 plt.plot(save_model.history["accuracy"],color="red",label="train")
@@ -96,7 +99,6 @@ plt.plot(save_model.history["val_loss"],color="blue",label="validation")
 plt.legend()
 plt.show()
 
-save_model.model.save(r"E:\CNN Project\TL\save model\TL_feature_extraction_10.h5")
 
 
 
